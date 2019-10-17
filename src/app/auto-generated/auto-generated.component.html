@@ -1,0 +1,14 @@
+<div class="jumbotron text-center">
+    <h1>Doctors List</h1>
+  </div>
+<div class="container">
+<div *ngFor="let item of DoctorList">
+<div class="row col-sm-12">
+  <h3>
+      *{{ item }}
+  </h3>
+</div>
+</div>
+<button type="button" [routerLink] ="['/doc-reg']"  class="btn btn-link">Add Doctor</button>
+<!-- <button type="button" (click)="clearDoctor()" class="btn btn-default">clear</button> -->
+</div>

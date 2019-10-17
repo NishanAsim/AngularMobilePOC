@@ -1,0 +1,45 @@
+
+<!-- <div class="jumbotron text-center">
+    <h1>Doctors List</h1>
+  </div>
+<div class="container">
+<div *ngFor="let item of DoctorList">
+<div class="row col-sm-12">
+  <h3>
+      *{{ item }}
+  </h3>
+</div>
+</div>
+<button type="button" [routerLink] ="['/doc-reg']"  class="btn btn-link">Add Doctor</button>
+<button type="button" (click)="clearDoctor()" class="btn btn-default">clear</button>
+</div> -->
+ <!-- <DockLayout width="210" height="210" backgroundColor="lightgray">
+    <Label text="Doctor List" dock="top" backgroundColor="red"></Label>
+    
+  </DockLayout>
+  <StackLayout width="210" height="210" *ngFor = "let item of DoctorList">
+    <Label [text] = "item"></Label>
+  </StackLayout> -->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+<FlexboxLayout flexDirection="column" alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
+<Label row="1" text="Doctor List" width="70" height="70" textWrap="true" ></Label>
+    <!-- <StackLayout  orientation="horizontal">
+    <Repeater items="{{ DoctorList }}" width="200">
+         <Repeater.itemsLayout>
+            <StackLayout orientation="vertical" ></StackLayout>
+        </Repeater.itemsLayout> 
+        <Repeater.itemTemplate orientation="horizontal"> 
+            <Label text="{{ $value }}" margin="10" style="font-size:20;" width="200"></Label>
+        </Repeater.itemTemplate>
+    </Repeater>
+  </StackLayout> -->
+  <ListView row="2" [items]="DoctorList">
+  <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+      <StackLayout [class.odd]="odd" [class.even]="even">
+          <Label [text]='item'></Label>
+      </StackLayout>
+  </ng-template> 
+</ListView>
+<Button row="3" text="New Doctor" [nsRouterLink]="['/doc-reg']" ></Button>
+</FlexboxLayout>
+</Page>

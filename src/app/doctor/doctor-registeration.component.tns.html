@@ -1,0 +1,25 @@
+<!-- <div class="jumbotron text-center">
+    <h1>Register Doctor</h1>
+  </div>
+<div class="container">
+        <div class="form-group">
+                <label for="fn">First Name:</label>
+                <input  class="form-control" id="fn" [(ngModel)]="firstName">
+        </div>
+        <div class="form-group">
+                <label for="ln">Last Name:</label>
+                <input class="form-control" id="ln" [(ngModel)]="lastName">
+        </div>
+        <button type="button" (click)="addDoctor()" class="btn btn-default">Add</button>
+</div> -->
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+        <FlexboxLayout flexDirection="column" alignItems="flex-start" width="300" height="300" backgroundColor="lightgray">
+        <Label row="1" text="Register Doctor" width="70" height="70" textWrap="true" ></Label>
+        
+        
+        <TextField row="2" class="input input-border" autocorrect="false" hint="done" [(ngModel)]="firstName"></TextField>
+        <TextField row="2" class="input input-border" autocorrect="false" hint="done" [(ngModel)]="lastName"></TextField>
+        <Button row="3" text="Add Doctor" (tap)="addDoctor()" ></Button>
+        </FlexboxLayout>
+</Page>
